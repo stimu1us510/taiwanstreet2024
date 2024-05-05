@@ -106,25 +106,29 @@ const photos = [
   }
 ]
 
-const galleryContainer = document.querySelector(".gallery")
+const galleryContainer = document.querySelector(".gallery");
 
 photos.forEach(photo => {
-  const photoContainer = document.createElement("div")
-  photoContainer.classList.add("photo-container")
-  photoContainer.style.order = photo.order || 100
+    const photoContainer = document.createElement("div");
+    photoContainer.classList.add("photo-container");
+    photoContainer.style.order = photo.order || 100;
 
-  if (photo.bgColor) photoContainer.style.backgroundColor = photo.bgColor
-  
-  const image = document.createElement("img")
-  image.src = photo.src
-  image.setAttribute("data-src", photo.dataSrc)
-  image.alt = photo.alt
- 
-  image.onload = () => image.setAttribute('src', image.getAttribute('data-src'))
+    if (photo.bgColor) photoContainer.style.backgroundColor = photo.bgColor
 
-  photoContainer.appendChild(image)
-  galleryContainer.appendChild(photoContainer)
-})
+    const image = document.createElement("img")
+    const blurImage = document.createElement("img")
+    image.src = photo.dataSrc
+    blurImage.src = photo.src
+    blurImage.classList.add("blur")
+    image.setAttribute("data-src", photo.dataSrc)
+    image.alt = photo.alt
+
+    photoContainer.appendChild(blurImage)
+
+    image.onload = () => photoContainer.replaceChild(image, blurImage)
+
+    galleryContainer.appendChild(photoContainer);
+});
 
 const introObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
