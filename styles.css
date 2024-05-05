@@ -109,3 +109,14 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
+
+.animated-hr {
+  animation: expandWidth 1s forwards;
+  border: none;
+  background-color: red;
+}
+
+@keyframes expandWidth {
+  0% { width: 0px; }
+  100% { width: 250px; }
+}

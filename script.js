@@ -126,6 +126,19 @@ photos.forEach(photo => {
   galleryContainer.appendChild(photoContainer)
 })
 
+const introObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      document.getElementById("intro-line").classList.add("animated-hr")
+      console.log("intersecting now")
+    } else {
+      document.getElementById("intro-line").classList.remove("animated-hr")
+    }
+  })
+}, { threshold: 0.5 })
+
+introObserver.observe(document.getElementById("intro"))
+
 document.addEventListener('dragstart', (event) => {
   let target = event.target
   if (target.tagName.toLowerCase() === 'img')  event.preventDefault()
