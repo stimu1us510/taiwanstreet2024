@@ -120,21 +120,10 @@ photos.forEach(photo => {
   image.setAttribute("data-src", photo.dataSrc)
   image.alt = photo.alt
  
-  image.onload = () => {
-    image.setAttribute('src', image.getAttribute('data-src'))
-  }
+  image.onload = () => image.setAttribute('src', image.getAttribute('data-src'))
 
   photoContainer.appendChild(image)
   galleryContainer.appendChild(photoContainer)
-})
-
-document.addEventListener("DOMContentLoaded", function() {
-  const images = document.querySelectorAll('.photo-container img')
-
-  images.forEach(img => {
-      img.onload = () => img.setAttribute('src', img.getAttribute('data-src'))
-      img.oncontextmenu = (event) => event.preventDefault()
-  })
 })
 
 document.addEventListener('dragstart', (event) => {
