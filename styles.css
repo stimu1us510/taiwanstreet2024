@@ -156,3 +156,20 @@ img {
   0% { width: 0px; }
   100% { width: 250px; }
 }
+
+.bounce {
+  animation: bounce 1.9s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
