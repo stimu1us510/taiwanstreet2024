@@ -1,10 +1,10 @@
 const photos = [
   {
-    src: "img/taiwan_street_6_xs.jpg",
-    dataSrc: "img/taiwan_street_6.jpeg",
-    alt: "male senior exits taxi",
+    src: "img/taiwan_street_9_xs.jpg",
+    dataSrc: "img/taiwan_street_9.jpeg",
+    alt: "males playing boardgame outside temple",
     bgColor: "white",
-    order: 4,
+    order: 2,
   },
   {
     src: "img/taiwan_street_8_xs.jpg",
@@ -14,11 +14,11 @@ const photos = [
     order: 3,
   },
   {
-    src: "img/taiwan_street_9_xs.jpg",
-    dataSrc: "img/taiwan_street_9.jpeg",
-    alt: "males playing boardgame outside temple",
+    src: "img/taiwan_street_6_xs.jpg",
+    dataSrc: "img/taiwan_street_6.jpeg",
+    alt: "male senior exits taxi",
     bgColor: "white",
-    order: 2,
+    order: 4,
   },
   {
     src: "img/taiwan_street_10_xs.jpg",
